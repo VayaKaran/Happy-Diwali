@@ -1,0 +1,237 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.diya-container {
+    margin-top: 50px;
+}
+
+.diya {
+    width: 200px;
+    border-radius: 50%;
+    animation: diyaGlow 2s infinite alternate;
+}
+
+@keyframes diyaGlow {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(1.5);
+    }
+}
+
+/* New Animation for Buttons */
+@keyframes buttonGlow {
+    0% { box-shadow: 0 0 5px #ffd700; }
+    50% { box-shadow: 0 0 20px #ffcc00; }
+    100% { box-shadow: 0 0 5px #ffd700; }
+}
+
+button#celebrateBtn {
+    animation: buttonGlow 1.5s infinite alternate;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+button#celebrateBtn:hover {
+    transform: scale(1.1);
+}
+
+/* Fireworks */
+.fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+    width: 3px;
+    height: 50px;
+    background-color: yellow;
+    animation: fireworkAnimation 2s ease-in-out infinite;
+}
+.firework:hover {
+    background-color: red;
+    animation: fireworkPop 1s ease-out;
+}
+
+.firework-1 {
+    left: 20%;
+    animation-delay: 0.5s;
+}
+.firework-2 {
+    left: 35%;
+    animation-delay: 1s;
+}
+.firework-3 {
+    left: 50%;
+    animation-delay: 1.5s;
+}
+.firework-4 {
+    left: 65%;
+    animation-delay: 2s;
+}
+.firework-5 {
+    left: 80%;
+    animation-delay: 2.5s;
+}
+@keyframes fireworkAnimation {
+    0% {
+        height: 50px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        height: 200px;
+        opacity: 0.5;
+    }
+    100% {
+        height: 50px;
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+}
+
+/* Floating Lanterns */
+.lantern-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.lantern {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50% 50% 0 0;
+    animation: lanternFloat 8s linear infinite;
+    z-index: 2;
+}
+
+.lantern-1 {
+    left: 5%;
+    animation-delay: 0s;
+}
+.lantern-2 {
+    left: 25%;
+    animation-delay: 2s;
+}
+.lantern-3 {
+    left: 45%;
+    animation-delay: 4s;
+}
+.lantern-4 {
+    left: 65%;
+    animation-delay: 3s;
+}
+.lantern-5 {
+    left: 85%;
+    animation-delay: 5s;
+}
+
+@keyframes lanternFloat {
+    0% {
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .diya {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .diya {
+        width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .firework, .lantern {
+        width: 2px;
+    }
+    .diya {
+        width: 120px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+    .diya {
+        width: 90px;
+    }
+    .firework, .lantern {
+        width: 2px;
+    }
+}
+
+@media (max-width: 350px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    .diya {
+        width: 80px;
+    }
+    .btn-lg {
+        font-size: 0.8rem;
+    }
+}
+
